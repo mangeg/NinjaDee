@@ -5,7 +5,9 @@ VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NinjaDee", "NinjaDee\NinjaDee.vcxproj", "{E6C7610E-1D8B-4163-9D59-4F1A2A45365C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NinjaDee.App", "NinjaDee.App\NinjaDee.App.vcxproj", "{4275FAB6-1EDB-4C53-A7EA-027E7CCB5851}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{3D1BDA65-7D96-4E63-B5DA-772DBB5663B4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NinjaDee.App", "Apps\NinjaDee.App\NinjaDee.App.vcxproj", "{4275FAB6-1EDB-4C53-A7EA-027E7CCB5851}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +26,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4275FAB6-1EDB-4C53-A7EA-027E7CCB5851} = {3D1BDA65-7D96-4E63-B5DA-772DBB5663B4}
 	EndGlobalSection
 EndGlobal
