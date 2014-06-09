@@ -82,8 +82,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>copy Application\*.h ..\SDK\Include
-copy Utility\*.h ..\SDK\Include</Command>
+      <Command>echo f | xcopy Application\*.h ..\SDK\Include\ /Y /F
+echo f | xcopy Utility\*.h ..\SDK\Include\ /Y /F</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
