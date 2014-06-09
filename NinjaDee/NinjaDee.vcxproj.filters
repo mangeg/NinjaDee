@@ -4,9 +4,27 @@
     <Filter Include="Utility">
       <UniqueIdentifier>{6cbda387-c50e-461d-84aa-4af76e6b2fc1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Application">
+      <UniqueIdentifier>{96cfe341-5cde-4f73-8018-5b905c44b7ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Utility\pch.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Application\main.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Application\Application.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Application\RenderWindow.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Application\Win32RenderWindow.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility\FileSystem.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
   </ItemGroup>
@@ -15,6 +33,24 @@
       <Filter>Utility</Filter>
     </ClInclude>
     <ClInclude Include="Utility\targetver.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Application\Application.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Application\RenderWindow.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Application\IWindowProc.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Application\Win32RenderWindow.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\FileSystem.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\FileInfo.h">
       <Filter>Utility</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,11 +11,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Application\Application.cpp" />
+    <ClCompile Include="Application\main.cpp" />
+    <ClCompile Include="Application\RenderWindow.cpp" />
+    <ClCompile Include="Application\Win32RenderWindow.cpp" />
+    <ClCompile Include="Utility\FileSystem.cpp" />
     <ClCompile Include="Utility\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Application\Application.h" />
+    <ClInclude Include="Application\IWindowProc.h" />
+    <ClInclude Include="Application\RenderWindow.h" />
+    <ClInclude Include="Application\Win32RenderWindow.h" />
+    <ClInclude Include="Utility\FileInfo.h" />
+    <ClInclude Include="Utility\FileSystem.h" />
     <ClInclude Include="Utility\pch.h" />
     <ClInclude Include="Utility\targetver.h" />
   </ItemGroup>
@@ -63,13 +74,17 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>Utility</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Utility;Application</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>copy Application\*.h ..\SDK\Include
+copy Utility\*.h ..\SDK\Include</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

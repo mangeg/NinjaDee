@@ -8,6 +8,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{3D1BDA65-7D96-4E63-B5DA-772DBB5663B4}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NinjaDee.App", "Apps\NinjaDee.App\NinjaDee.App.vcxproj", "{4275FAB6-1EDB-4C53-A7EA-027E7CCB5851}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E6C7610E-1D8B-4163-9D59-4F1A2A45365C} = {E6C7610E-1D8B-4163-9D59-4F1A2A45365C}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
