@@ -27,6 +27,12 @@
     <ClCompile Include="Utility\FileSystem.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
+    <ClCompile Include="Utility\FileInfo.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility\Path.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utility\pch.h">
@@ -51,6 +57,9 @@
       <Filter>Utility</Filter>
     </ClInclude>
     <ClInclude Include="Utility\FileInfo.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Path.h">
       <Filter>Utility</Filter>
     </ClInclude>
   </ItemGroup>

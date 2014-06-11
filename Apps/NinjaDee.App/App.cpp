@@ -1,5 +1,7 @@
 #include "App.h"
 #include "FileSystem.h"
+#include "..\..\NinjaDee\Utility\FileInfo.h"
+#include "..\..\NinjaDee\Utility\Path.h"
 
 using namespace NinjaDee;
 
@@ -19,6 +21,33 @@ void App::Initialize()
 {
 	auto folderExits = FileSystem::FolderExists(L"C:\\Projects\\Cpp\\NinjaDee\\Apps.props");
 	auto fileExists = FileSystem::FileExists(L"C:\\Projects\\Cpp\\NinjaDee\\Apps.props");
+
+	auto fileInfo = FileInfo(LR"(C:\Projects\Cpp\NinjaDee\Apps\NinjaDee.App\App.cpp)");
+	std::wstring fullPath = fileInfo.GetFullPath();
+	auto lastError = GetLastErrorStdStr();
+	std::wstring extension = fileInfo.GetExtension();
+	lastError = lastError = GetLastErrorStdStr();
+	std::wstring fileName = fileInfo.GetFileName();
+	lastError = lastError = GetLastErrorStdStr();
+	std::wstring longPath = fileInfo.GetLongPath();
+	lastError = lastError = GetLastErrorStdStr();
+	std::wstring shortPath = fileInfo.GetShortPath();
+	lastError = lastError = GetLastErrorStdStr();
+	auto size = fileInfo.GetSize();
+	lastError = lastError = GetLastErrorStdStr();
+	auto lastWrite = fileInfo.GetLastChanged();
+	lastError = lastError = GetLastErrorStdStr();
+	
+	SYSTEMTIME stUTC, stLocal;
+
+	// Convert the last-write time to local time.
+	FileTimeToSystemTime(&lastWrite, &stUTC);
+	SystemTimeToTzSpecificLocalTime( nullptr, &stUTC, &stLocal);
+
+	auto local = FormatDateTime(stLocal);
+	auto utc = FormatDateTime(stUTC);
+
+	Path::Combine(LR"(C:\Test\\\//\)", LR"(\s)");
 }
 void App::Update()
 {

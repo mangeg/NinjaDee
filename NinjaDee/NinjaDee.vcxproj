@@ -15,7 +15,9 @@
     <ClCompile Include="Application\main.cpp" />
     <ClCompile Include="Application\RenderWindow.cpp" />
     <ClCompile Include="Application\Win32RenderWindow.cpp" />
+    <ClCompile Include="Utility\FileInfo.cpp" />
     <ClCompile Include="Utility\FileSystem.cpp" />
+    <ClCompile Include="Utility\Path.cpp" />
     <ClCompile Include="Utility\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
@@ -27,6 +29,7 @@
     <ClInclude Include="Application\Win32RenderWindow.h" />
     <ClInclude Include="Utility\FileInfo.h" />
     <ClInclude Include="Utility\FileSystem.h" />
+    <ClInclude Include="Utility\Path.h" />
     <ClInclude Include="Utility\pch.h" />
     <ClInclude Include="Utility\targetver.h" />
   </ItemGroup>
