@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Application.h"
 #include "Win32RenderWindow.h"
 

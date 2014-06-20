@@ -62,5 +62,8 @@
     <ClInclude Include="Utility\Path.h">
       <Filter>Utility</Filter>
     </ClInclude>
+    <ClInclude Include="Utility\StringHelpers.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

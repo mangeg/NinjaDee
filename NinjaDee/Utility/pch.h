@@ -16,16 +16,16 @@
 #endif
 
 // Standard C++ Library includes
-//#include <fstream>
+#include <fstream>
 #include <string>
-//#include <map>
-//#include <list>
+#include <list>
 #include <sstream>
 #include <algorithm>
 #include <iomanip>
-//#include <map>
-//#include <vector>
-//#include <exception>
+#include <functional>
+#include <map>
+#include <vector>
+#include <exception>
 
 // Standard C Library includes
 //#include <stdio.h>
@@ -38,11 +38,17 @@
 #include <Windows.h>
 
 // DirectX includes
-#include <d3d11_1.h>
+#include <d3d11_2.h>
 #include <d3dCompiler.h>
 
-#define SAFE_RELEASE( x ) {if(x){(x)->Release();(x)=NULL;}}
-#define SAFE_DELETE( x ) {if(x){delete (x);(x)=NULL;}}
-#define SAFE_DELETE_ARRAY( x ) {if(x){delete[] (x);(x)=NULL;}}
+#ifdef _DEBUG
+#define MGNEW new(_NORMAL_BLOCK,__FILE__, __LINE__)
+#else
+#define MGNEW new
+#endif
+
+#define SAFE_RELEASE( x ) {if(x){(x)->Release();(x)=nullptr;}}
+#define SAFE_DELETE( x ) {if(x){delete (x);(x)=nullptr;}}
+#define SAFE_DELETE_ARRAY( x ) {if(x){delete[] (x);(x)=nullptr;}}
 
 // TODO: reference additional headers your program requires here

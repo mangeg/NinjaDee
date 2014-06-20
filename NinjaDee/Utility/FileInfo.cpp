@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "FileInfo.h"
+#include <Path.h>
 
 using namespace NinjaDee;
 
@@ -50,22 +51,12 @@ const std::wstring FileInfo::GetShortPath() const
 
 const std::wstring FileInfo::GetFileName() const
 {
-	auto lastSlash = m_sFilePath.find_last_of(LR"(\)");
-	if (lastSlash != std::string::npos && m_sFilePath.length() > lastSlash )
-	{
-		return m_sFilePath.substr(lastSlash + 1);
-	}
-	return m_sFilePath;
+	return Path::GetFileName(m_sFilePath);
 }
 
 const std::wstring FileInfo::GetExtension() const
 {
-	auto dotIndex = m_sFilePath.find_last_of(L".");
-	if (dotIndex != std::string::npos)
-	{
-		return m_sFilePath.substr(dotIndex);
-	}
-	return L"";
+	return Path::GetExtension(m_sFilePath);
 }
 
 const LARGE_INTEGER FileInfo::GetSize() const

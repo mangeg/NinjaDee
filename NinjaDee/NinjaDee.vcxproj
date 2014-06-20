@@ -31,6 +31,7 @@
     <ClInclude Include="Utility\FileSystem.h" />
     <ClInclude Include="Utility\Path.h" />
     <ClInclude Include="Utility\pch.h" />
+    <ClInclude Include="Utility\StringHelpers.h" />
     <ClInclude Include="Utility\targetver.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
