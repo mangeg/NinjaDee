@@ -42,9 +42,9 @@
 #include <d3dCompiler.h>
 
 #ifdef _DEBUG
-#define MGNEW new(_NORMAL_BLOCK,__FILE__, __LINE__)
+#define NNEW new(_NORMAL_BLOCK,__FILE__, __LINE__)
 #else
-#define MGNEW new
+#define NNEW new
 #endif
 
 #define SAFE_RELEASE( x ) {if(x){(x)->Release();(x)=nullptr;}}

@@ -33,6 +33,9 @@
     <ClCompile Include="Utility\Path.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
+    <ClCompile Include="Utility\Log.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utility\pch.h">
@@ -63,6 +66,9 @@
       <Filter>Utility</Filter>
     </ClInclude>
     <ClInclude Include="Utility\StringHelpers.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Log.h">
       <Filter>Utility</Filter>
     </ClInclude>
   </ItemGroup>

@@ -17,9 +17,11 @@
     <ClCompile Include="Application\Win32RenderWindow.cpp" />
     <ClCompile Include="Utility\FileInfo.cpp" />
     <ClCompile Include="Utility\FileSystem.cpp" />
+    <ClCompile Include="Utility\Log.cpp" />
     <ClCompile Include="Utility\Path.cpp" />
     <ClCompile Include="Utility\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -29,6 +31,7 @@
     <ClInclude Include="Application\Win32RenderWindow.h" />
     <ClInclude Include="Utility\FileInfo.h" />
     <ClInclude Include="Utility\FileSystem.h" />
+    <ClInclude Include="Utility\Log.h" />
     <ClInclude Include="Utility\Path.h" />
     <ClInclude Include="Utility\pch.h" />
     <ClInclude Include="Utility\StringHelpers.h" />
@@ -64,8 +67,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)SDK\$(Configuration)\</OutDir>
-    <IntDir>obj\$(Configuration)\</IntDir>
+    <OutDir>..\SDK\Library\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>Bin\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>..\SDK\Library\$(Platform)\$(Configuration)\</OutDir>
@@ -98,6 +101,8 @@ echo f | xcopy Utility\*.h ..\SDK\Include\ /Y /F</Command>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>Utility;Application</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -105,6 +110,10 @@ echo f | xcopy Utility\*.h ..\SDK\Include\ /Y /F</Command>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PostBuildEvent>
+      <Command>echo f | xcopy Application\*.h ..\SDK\Include\ /Y /F
+echo f | xcopy Utility\*.h ..\SDK\Include\ /Y /F</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -89,7 +89,7 @@ const FILETIME FileInfo::GetLastChanged() const
 	if (success)
 	{
 		return data.ftLastWriteTime;
-	}
+	}	
 
 	return FILETIME();
 }

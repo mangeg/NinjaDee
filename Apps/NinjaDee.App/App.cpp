@@ -1,7 +1,8 @@
 #include "App.h"
 #include "FileSystem.h"
-#include "..\..\NinjaDee\Utility\FileInfo.h"
-#include "..\..\NinjaDee\Utility\Path.h"
+#include "FileInfo.h"
+#include "Path.h"
+#include "Log.h"
 
 using namespace NinjaDee;
 
@@ -20,16 +21,19 @@ std::wstring App::GetName()
 void App::Initialize()
 {	
 }
+
 void App::Update()
 {
+	LOG_F(1 == 1);
 }
+
 void App::Shutdown()
 {
 }
 
 bool App::ConfigureEngine()
 {
-	m_pRenderWindow = MGNEW Win32RenderWindow();
+	m_pRenderWindow = NNEW Win32RenderWindow();
 	m_pRenderWindow->Initialize(this);
 	m_pRenderWindow->SetCaption(GetName());
 
